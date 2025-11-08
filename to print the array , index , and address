@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int a[100], n, i;
+
+    // Input array size with validation
+    printf("Enter array size (max 100): ");
+    scanf("%d", &n);
+    if (n < 1 || n > 100) {
+        printf("Invalid size! Please enter a value between 1 and 100.\n");
+        return 1;
+    }
+
+    // Input array values
+    printf("Enter %d array values:\n", n);
+    for(i = 0; i < n; i++) {
+        printf("a[%d] = ", i);
+        scanf("%d", &a[i]);
+    }
+
+    // Output header
+    printf("\nIndex\tValue\tAddress\n");
+    printf("-------------------------------\n");
+
+    // Display array index, value and address
+    for(i = 0; i < n; i++) {
+        printf("%d\t%d\t%p\n", i, a[i], (void*)&a[i]);
+    }
+
+    return 0;
+}
